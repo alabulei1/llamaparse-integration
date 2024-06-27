@@ -36,9 +36,9 @@ You can configure your model setting in the `.env` file. Remember to make some c
 OPENAI_BASE_URL=http://127.0.0.1:8080/v1
 OPENAI_API_KEY=LLAMAEDGE
 LLAMAEDGE_CHAT_MODEL=Phi-3-mini-4k-instruct
-LLAMAEDGE_EMBEDDING_MODEL=Nomic-embed-text-v1.5
+LLAMAEDGE_EMBEDDING_MODEL=nomic-embed-text-v1.5.f16
 LLAMA_CLOUD_API_KEY=llx-XXX
-FILE_PATH=XXX.pdf
+FILE_PATH=2406.14497v1.pdf
 COLLECTION_NAME=default
 QDRANT_URL=http://127.0.0.1:6333
 ```
