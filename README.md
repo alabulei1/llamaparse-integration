@@ -8,7 +8,7 @@ This repo guides you to integrate LlamaParse (created by LlamaIndex) with LlamaE
 
 ```
 git clone https://github.com/alabulei1/llamaparse-integration.git
-cd lamaparse-integration
+cd llamaparse-integration
 npm install llamaindex
 npm install dotenv
 ```
