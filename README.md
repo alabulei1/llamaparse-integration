@@ -45,19 +45,6 @@ QDRANT_URL=http://127.0.0.1:6333
 
 You can get the LlamaCloud key from https://cloud.llamaindex.ai
 
-### Start a Qdrant instance
-
-You will need to start a Qdrant instance to store the embeddings.
-
-```
-mkdir qdrant_storage
-mkdir qdrant_snapshots
-
-nohup docker run -d -p 6333:6333 -p 6334:6334 \
-    -v $(pwd)/qdrant_storage:/qdrant/storage:z \
-    -v $(pwd)/qdrant_snapshots:/qdrant/snapshots:z \
-    qdrant/qdrant
-```
 
 ### Run the LlamaParse to create embeddings
 
@@ -65,6 +52,8 @@ nohup docker run -d -p 6333:6333 -p 6334:6334 \
 npx tsx pdfRender.ts
 ```
 After it runs successfully, you can send a query via the command line.
+<img width="1462" alt="image" src="https://github.com/alabulei1/llamaparse-integration/assets/45785633/df811b58-26e4-43c8-82e2-ef4cf97114d1">
+
 
 ### Generate a snapshot for the embeddings
 
