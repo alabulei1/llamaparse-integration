@@ -1,0 +1,12 @@
+{
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "llamaindex": "^0.4.5",
+    "tsx": "^4.15.7"
+  },
+  "scripts": {
+    "renderPDF": "npx tsx pdfRender.ts",
+    "renderTXT": "npx tsx txtRender.ts"
+  }
+}
