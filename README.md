@@ -1,8 +1,8 @@
 # llamaparse-integration
 
-This repo guides you to integrate LlamaParse (created by LlamaIndex) with LlamaEdge/GaiaNet to generate snapshots for you to use.
+This repo guides you to integrate LlamaParse (created by LlamaIndex) with LlamaEdge/GaiaNet to create embeddings/convert file formats for you to use.
 
-## Steps
+## Setups
 
 ### Set up the environment
 
@@ -26,7 +26,7 @@ nohup docker run -d -p 6333:6333 -p 6334:6334 \
 
 ### Start running a general LLM and embedding model
 
-You can use LlamaEdge or Gaianet to run a a general LLM and embedding model. Please to be noted, if you're using GaiaNet, the `snapshot` filed in the `config.json` folder should be empty.
+You can use LlamaEdge or Gaianet to run a general LLM and embedding model. Please to be noted, if you're using GaiaNet, the `snapshot` filed in the `config.json` folder should be empty.
 
 ### Set up the model setting
 
@@ -46,7 +46,7 @@ QDRANT_URL=http://127.0.0.1:6333
 You can get the LlamaCloud key from https://cloud.llamaindex.ai
 
 
-### Run the LlamaParse to create embeddings
+## Run the LlamaParse to create embeddings based on PDF files
 
 ```
 npx tsx pdfRender.ts
@@ -54,22 +54,12 @@ npx tsx pdfRender.ts
 After it runs successfully, you can send a query via the command line.
 <img width="1462" alt="image" src="https://github.com/alabulei1/llamaparse-integration/assets/45785633/df811b58-26e4-43c8-82e2-ef4cf97114d1">
 
-
-### Generate a snapshot for the embeddings
-
-There are two ways to generate a snapshot for the embeddings you just created.
-
-The easiest way is to leverage Qdrant UI (http://localhost:6333/dashboard). Go to Collections and find the default collection, then go to the snapshot tab and click on Take a snapshot. Finally, you can download the snapshot.
-
-The second way is to use the following command line to generate a snapshot
+## Run the LlamaParse to convert a PDF file to an MD file
 
 ```
-curl -X POST 'http://localhost:6333/collections/default/snapshots'
+npx tsx transMd.ts
 ```
-
-The output will be the file name of your snapshot.
-
-After you get the snapshot, you can upload it to HuggingFace and use it when building a GaiaNet node.
+In this case, you don't need to set up the LLM model-related parameters. The output MD file will be located in this folder named `output.md` by default. You can change the path in the `.env` file.
 
 ## Supported file formats
 
