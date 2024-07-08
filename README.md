@@ -51,6 +51,11 @@ You can get the LlamaCloud key from https://cloud.llamaindex.ai
 ```
 npx tsx pdfRender.ts
 ```
+Then, the terminal will pop up a question to ask for running with one PDF file or multiple PDF files. If you enter Y, the program will create a RAG app for the pdf files from the `/pdf_dir` folder, which can include multiple files. If you enter N, the program will create an RAG app for the PDF file specified by the `.env` file.
+
+```
+Do you want to read from the folder(Y or N)
+```
 After it runs successfully, you can send a query via the command line.
 <img width="1462" alt="image" src="https://github.com/alabulei1/llamaparse-integration/assets/45785633/df811b58-26e4-43c8-82e2-ef4cf97114d1">
 
@@ -58,6 +63,15 @@ After it runs successfully, you can send a query via the command line.
 
 ```
 npx tsx transMd.ts
+```
+In this case, you don't need to set up the LLM model-related parameters. The output MD file will be located in this folder named `output.md` by default. You can change the path in the `.env` file.
+
+## Run the Llamaparse to convert multiple PDF files to one MD file
+
+Upload your pdf files to the `/pdf_dir` folder.
+
+```
+npx tsx transMdFromDir.ts
 ```
 In this case, you don't need to set up the LLM model-related parameters. The output MD file will be located in this folder named `output.md` by default. You can change the path in the `.env` file.
 
