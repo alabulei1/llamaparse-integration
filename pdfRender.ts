@@ -23,16 +23,11 @@ async function main() {
     const dir = process.env.FILE_DIR;
     let path = process.env.FILE_PATH;
     let reader
-    if(dir) {
-        const isDir = await rl.question("Do you want to read from the folder(Y or N)");
-        if(!isDir || isDir.toUpperCase() === "Y") {
-            path = dir
-            reader = new SimpleDirectoryReader();
-        }else {
-            reader = new LlamaParseReader({resultType: "markdown"});
-        }
-    }else {
+    if(path) {
         reader = new LlamaParseReader({resultType: "markdown"});
+    }else {
+        path = dir
+        reader = new SimpleDirectoryReader();
     }
 
     if(path){

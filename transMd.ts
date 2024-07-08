@@ -1,7 +1,7 @@
 import * as dotenv from "dotenv";
 import {promises as fs} from 'fs';
 
-import {LlamaParseReader} from "llamaindex";
+import {LlamaParseReader, SimpleDirectoryReader} from "llamaindex";
 
 async function saveMarkdown(mdContent: string, filePath: string) {
     try {
@@ -16,14 +16,20 @@ async function main() {
     dotenv.config();
 
 
-    const path = process.env.FILE_PATH;
-
-    const reader = new LlamaParseReader({resultType: "markdown"});
+    let path = process.env.FILE_PATH;
+    const dir = process.env.FILE_DIR;
+    let reader
+    if (path) {
+        reader = new LlamaParseReader({resultType: "markdown"});
+    } else {
+        path = dir
+        reader = new SimpleDirectoryReader();
+    }
 
     if (path) {
         const documents = await reader.loadData(path)
 
-        saveMarkdown(documents[0].text, process.env.SAVE_MARKDOWN_PATH || "./output.md")
+        await saveMarkdown(documents[0].text, process.env.SAVE_MARKDOWN_PATH || "./output.md")
     }
 }
 
