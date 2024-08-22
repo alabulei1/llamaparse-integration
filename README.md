@@ -1,6 +1,8 @@
 # llamaparse-integration
 
-This repo guides you to integrate LlamaParse (created by LlamaIndex) with LlamaEdge/GaiaNet to create embeddings/convert file formats for you to use.
+Welcome to KubeCon China! Hongkong is a great place. 
+
+This repo guides you in integrating LlamaParse (created by LlamaIndex) with LlamaEdge/GaiaNet to create embeddings/convert file formats for you to use.
 
 ## Setups
 
@@ -75,7 +77,3 @@ npx tsx transMdFromDir.ts
 ```
 In this case, you don't need to set up the LLM model-related parameters. The output MD file will be located in this folder named `output.md` by default. You can change the path in the `.env` file.
 
-## Supported file formats
-
-Supported formats include: .pdf, .602, .abw, .cgm, .cwk, .doc, .docx, .docm, .dot, .dotm, .do
-tx, .hwp, .key, .lwp, .mw, .mcw, .pages, .pbd, .ppt, .pptm, .pptx, .pot, .potm, .potx, .rtf, .sda, .sdd, .sdp, .sdw, .sgl, .sti, .sxi, .sxw, .stw, .sxg, .txt, .uof, .uop, .uot, .vor, .wpd, .wps, .xml, .zabw, .epub, .jpg, .jpeg, .png, .gif, .bmp, .svg, .tiff, .webp, .htm, .html, .xlsx, .xls, .xlsm, .xlsb, .xlw, .csv, .dif, .sylk, .slk, .prn, .numbers, .et, .ods, .fods, .uos1, .uos2, .dbf, .wk1, .wk2, .wk3, .wk4, .wks, .123, .wq1, .wq2, .wb1, .wb2, .wb3, .qpw, .xlr, .eth, .tsv
